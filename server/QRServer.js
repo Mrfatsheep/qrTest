@@ -255,7 +255,7 @@ if(cluster.isMaster) {
         var server = app.listen(portID, function () {
           var host = server.address().address;
           var port = server.address().port;
-          console.log("Express Server Up. Visiting: http://127.0.0.1:" + portID);
+          console.log("Express Server Up. Listenging:" + portID);
         })
     });
 }
