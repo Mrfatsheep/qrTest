@@ -40,6 +40,10 @@ app.all('*', (req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.send("Homepage");
+})
+
 app.post('/init', function (req, res) {
     let latitude = req.body.latitude;
     let longitude = req.body.longitude;
