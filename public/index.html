@@ -54,8 +54,12 @@
         console.log(portID);
 
         // Server IP and port setup
-        const initUrl = "http://127.0.0.1:" + portID + "/init";
-        const pullDataUrl = "http://127.0.0.1:" + portID + "/pullData";
+        // const initUrl = "http://127.0.0.1:" + portID + "/init";
+        // const pullDataUrl = "http://127.0.0.1:" + portID + "/pullData";
+
+        const initUrl = "http://qrtest001-env.eba-rin8rhf4.us-east-2.elasticbeanstalk.com/init";
+        const pullDataUrl = "http://qrtest001-env.eba-rin8rhf4.us-east-2.elasticbeanstalk.com/pullData";
+
 
         const language = String(navigator.language).slice(0, 2);
         console.log(language);
