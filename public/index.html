@@ -54,15 +54,10 @@
         console.log(portID);
 
         // Server IP and port setup
-        // const initUrl = "http://127.0.0.1:" + portID + "/init";
-        // const pullDataUrl = "http://127.0.0.1:" + portID + "/pullData";
-
-        const initUrl = "http://qrtest001-env.eba-rin8rhf4.us-east-2.elasticbeanstalk.com/init";
-        const pullDataUrl = "http://qrtest001-env.eba-rin8rhf4.us-east-2.elasticbeanstalk.com/pullData";
-
+        const initUrl = "http://127.0.0.1:" + portID + "/init";
+        const pullDataUrl = "http://127.0.0.1:" + portID + "/pullData";
 
         const language = String(navigator.language).slice(0, 2);
-        console.log(language);
         var selectedText = "Selected: ";
 
         var reportTitleText = "Temperature Log Report";
@@ -81,7 +76,11 @@
         var noDataText = "no data";
         var errorNotice = "The store you picked has no device or temperture data, please try to refresh the page and contact us.";
 
-        if (language ==  "fr"){
+        switch(language) {
+            case "en":
+                //UI
+
+            case "fr":
                 //UI
                 document.getElementById("welcomeLabel").innerHTML = '<font size = "5"><strong>' + "FMS Plateforme d'exportation de données IOT" + "</strong></font>";
                 document.getElementById("helpInfo").innerHTML = '<font size="5"><strong>Si vous rencontrez des problèmes, veuillez nous contacter par: xxx-xxx-xxxx</strong></font>';
