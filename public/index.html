@@ -54,8 +54,8 @@
         console.log(portID);
 
         // Server IP and port setup
-        const initUrl = "http://172.31.25.18:" + portID + "/init";
-        const pullDataUrl = "http://172.31.25.18:" + portID + "/pullData";
+        const initUrl = "http://18.191.20.165:" + portID + "/init";
+        const pullDataUrl = "http://18.191.20.165:" + portID + "/pullData";
 
         const language = String(navigator.language).slice(0, 2);
         var selectedText = "Selected: ";
@@ -76,33 +76,30 @@
         var noDataText = "no data";
         var errorNotice = "The store you picked has no device or temperture data, please try to refresh the page and contact us.";
 
-        switch(language) {
-            case "en":
-                //UI
 
-            case "fr":
+        if(language == "fr"){
                 //UI
-                document.getElementById("welcomeLabel").innerHTML = '<font size = "5"><strong>' + "FMS Plateforme d'exportation de données IOT" + "</strong></font>";
-                document.getElementById("helpInfo").innerHTML = '<font size="5"><strong>Si vous rencontrez des problèmes, veuillez nous contacter par: xxx-xxx-xxxx</strong></font>';
-                document.getElementsByClassName("title")[0].innerHTML = 'Sélectionnez un magasin';
-                document.getElementById("exportBTN").innerHTML = 'Exportation';
-                selectedText = "Choisie: ";
-                //Report Text
-                reportTitleText = "Rapport de journal de température"
-                summaryDataText = "Résumé des données";
-                hourlyDataText = "Données horaires";
-                storeNameText = "Nom du magasin";
-                reportDateText = "Date du compte rendu";
-                equipmentText = "Équipement";
-                modelnumberText = "Modèle Numéro";
-                serialnumberText = "Numéro de série";
-                noTemperatureWarningText = "Aucune donnée de température";
-                dateText = "Date";
-                timeText = "Temps";
-                temperatureText = "Température";
-                temperatureTextShort = "Temp";
-                noDataText = "pas de données";
-                errorNotice = "Le magasin que vous avez choisi n'a pas de données d'appareil ou de température, veuillez essayer d'actualiser la page et nous contacter.";
+            document.getElementById("welcomeLabel").innerHTML = '<font size = "5"><strong>' + "FMS Plateforme d'exportation de données IOT" + "</strong></font>";
+            document.getElementById("helpInfo").innerHTML = '<font size="5"><strong>Si vous rencontrez des problèmes, veuillez nous contacter par: xxx-xxx-xxxx</strong></font>';
+            document.getElementsByClassName("title")[0].innerHTML = 'Sélectionnez un magasin';
+            document.getElementById("exportBTN").innerHTML = 'Exportation';
+            selectedText = "Choisie: ";
+            //Report Text
+            reportTitleText = "Rapport de journal de température"
+            summaryDataText = "Résumé des données";
+            hourlyDataText = "Données horaires";
+            storeNameText = "Nom du magasin";
+            reportDateText = "Date du compte rendu";
+            equipmentText = "Équipement";
+            modelnumberText = "Modèle Numéro";
+            serialnumberText = "Numéro de série";
+            noTemperatureWarningText = "Aucune donnée de température";
+            dateText = "Date";
+            timeText = "Temps";
+            temperatureText = "Température";
+            temperatureTextShort = "Temp";
+            noDataText = "pas de données";
+            errorNotice = "Le magasin que vous avez choisi n'a pas de données d'appareil ou de température, veuillez essayer d'actualiser la page et nous contacter.";
         }
 
 
