@@ -108,7 +108,17 @@
         var x = 20;
         var y = 65;
 
-        getLocation();
+        // getLocation();
+        if (navigator.geolocation) {
+            console.log("h5 定位中");
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude  = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                console.log('h5定位成功；'); 
+            }, function(error) {
+                console.log('h5定失败；'); 
+            })
+        }
 
         function getLocation() {
             if (navigator.geolocation) {
