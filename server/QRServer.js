@@ -6,6 +6,7 @@ const https = require('https');
 const cluster = require('cluster');
 const os = require('os');
 var bodyParser = require('body-parser');
+const path = require('path');
 
 const agent = new https.Agent({
     rejectUnauthorized: false
@@ -18,7 +19,7 @@ const login = {"username": "mguo@aquirefms.com", "password": "Ming1234"};
 const rangeLimit = 2.0; //Range for listing, unit (km)
 var menuLimit = 4;
 const initPort = 8080;
-const threadAmount = 1;
+const threadAmount = 4;
 
 var xAuthKeyGlobal;
 
@@ -115,12 +116,14 @@ if(cluster.isMaster) {
                 const findAssetAttrUrl = APIHeader + "plugins/telemetry/ASSET/" + assetID + "/values/attributes";
                 const resFindAssetAttr = await axios.get(findAssetAttrUrl, config)
                 .then(response => {
+                    console.log(response["data"]);
                     for(j = 0; j < response.data.length; j++) {
-                        if (response.data[j]["key"] == "latitude") {
-                            latitudeLocal = response.data[j]["value"];
+                        if (response["data"][j]["key"] == "latitude") {
+                            latitudeLocal = response["data"][j]["value"];
+                            console.log(latitudeLocal);
                         }
-                        if (response.data[j]["key"] == "longitude") {
-                            longitudeLocal = response.data[j]["value"];
+                        if (response["data"][j]["key"] == "longitude") {
+                            longitudeLocal = response["data"][j]["value"];
                         }
                     }
                     distance = distanceInKmBetweenEarthCoordinates(latitude, longitude, latitudeLocal, longitudeLocal);
@@ -145,6 +148,7 @@ if(cluster.isMaster) {
                         }
                     }
                     menuList.push({"menu": menuJsonList});
+                    console.log(menuList);
                 }
             }
         }
@@ -255,7 +259,7 @@ if(cluster.isMaster) {
         var server = app.listen(portID, function () {
           var host = server.address().address;
           var port = server.address().port;
-          console.log("Express Server Up. Listenging:" + portID);
+          console.log("Express Server Up. Visiting: localhost:" + portID);
         })
     });
 }

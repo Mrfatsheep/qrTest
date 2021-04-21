@@ -1,0 +1,110 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+body {
+    background: #4caf4f;
+    font-family: 'Montserrat', sans-serif
+}
+.title {
+    width: 30%;
+    box-sizing: border-box;
+    background: rgb(59, 8, 177);
+    padding: 14px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 40px -10px #000;
+    color: #d6e1e6
+}
+span {
+    float: right;
+    font-size: 18px!important
+}
+.deviceSelection {
+    margin-top: 24px;
+    margin-left: 35%;
+    width: 100%;
+}
+.exportButtomDiv{
+    margin-top: 24px;
+    margin-left: 35%;
+    margin-right: 35%;
+    height:max-content;
+}
+.exportBTN {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgb(59, 8, 177);
+    padding: 14px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 40px -10px #000;
+    color: #d6e1e6
+}
+.exportBTN:hover {
+    background: rgb(17, 5, 82);
+}
+
+.selectionDiv{
+    margin-top: 12px;
+    margin-left: 35%;
+}
+.dropdown {
+    background: rgb(59, 8, 177);
+    border-radius: 4px;
+    color: #d6e1e6;
+
+    width: 30%;
+    margin-top: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s;
+}
+.down {
+    max-height: 600px
+}
+.selectable {
+    padding: 15px 14px;
+    margin: 0;
+    transition: all .1s
+}
+.selectable:hover {
+    background: rgb(17, 5, 82);
+    /* -webkit-transform: scale(1.0);
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 30px 0px #000 */
+}
+
+*[hidden] {
+    display: none;
+}
+
+.helpLabel {
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    text-align: center;
+}
+
+.spinner{
+    width: 80px;
+    height: 80px;
+    
+    border: 8px solid #f3f3f3;
+    border-top:12px solid #f25a41;
+    border-radius: 100%;
+    
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin: auto;
+    
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
