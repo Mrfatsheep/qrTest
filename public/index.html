@@ -48,14 +48,14 @@
         var menuList = []
         // Random port
         const initPort = 8080;
-        const threadAmount = 4;
+        const threadAmount = 1;
         var portIndex = Math.floor(Math.random() * threadAmount);
         const portID = initPort + portIndex;
         console.log(portID);
 
         // Server IP and port setup
-        const initUrl = "http://127.0.0.1:" + portID + "/init";
-        const pullDataUrl = "http://127.0.0.1:" + portID + "/pullData";
+        const initUrl = "https://APILB-1162191738.ca-central-1.elb.amazonaws.com/init";
+        const pullDataUrl = "https://APILB-1162191738.ca-central-1.elb.amazonaws.com/pullData";
 
         const language = String(navigator.language).slice(0, 2);
         var selectedText = "Selected: ";
@@ -108,17 +108,7 @@
         var x = 20;
         var y = 65;
 
-        // getLocation();
-        if (navigator.geolocation) {
-            console.log("h5 定位中");
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var latitude  = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                console.log('h5定位成功；'); 
-            }, function(error) {
-                console.log('h5定失败；'); 
-            })
-        }
+        getLocation();
 
         function getLocation() {
             if (navigator.geolocation) {
